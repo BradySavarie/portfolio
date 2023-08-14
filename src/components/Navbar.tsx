@@ -5,9 +5,12 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import { Stack } from '@mui/material';
+import { Stack, useTheme } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
 export default function Navbar() {
+  const theme = useTheme();
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -15,14 +18,25 @@ export default function Navbar() {
           {'<BRADY__SAVARIE />'}
         </Typography>
         <Stack direction="row" spacing={2}>
-          <Button color="inherit">Projects</Button>
-          <Button color="inherit">About</Button>
-          <Button color="inherit">Skills</Button>
-          <Button color="inherit">Contact</Button>
+          <NavLink to="/">
+            <Button color="inherit">Projects</Button>
+          </NavLink>
+          <NavLink to="/">
+            <Button color="inherit">About</Button>
+          </NavLink>
+          <NavLink to="/">
+            <Button color="inherit">Skills</Button>
+          </NavLink>
+          <NavLink to="/">
+            <Button color="inherit">Contacts</Button>
+          </NavLink>
         </Stack>
-        <IconButton size="large" edge="start">
-          <LightModeIcon />
-          <DarkModeIcon />
+        <IconButton size="large" edge="start" /* onClick={toggleMode} */>
+          {theme.palette.mode === 'light' ? (
+            <LightModeIcon />
+          ) : (
+            <DarkModeIcon />
+          )}
         </IconButton>
         <Button color="inherit">Download Resume</Button>
       </Toolbar>
