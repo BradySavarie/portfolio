@@ -1,5 +1,7 @@
+import Navbar from './components/Navbar';
+
 function App() {
-  return <p>Test</p>;
+  return <Navbar />;
 }
 
 export default App;
