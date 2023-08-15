@@ -5,11 +5,12 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import { Stack, useTheme } from '@mui/material';
+import { Stack } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import { useColorMode } from '../context/ColorModeContext';
 
 export default function Navbar() {
-  const theme = useTheme();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <AppBar position="static">
@@ -31,12 +32,8 @@ export default function Navbar() {
             <Button color="inherit">Contacts</Button>
           </NavLink>
         </Stack>
-        <IconButton size="large" edge="start" /* onClick={toggleMode} */>
-          {theme.palette.mode === 'light' ? (
-            <LightModeIcon />
-          ) : (
-            <DarkModeIcon />
-          )}
+        <IconButton size="large" edge="start" onClick={toggleColorMode}>
+          {colorMode === 'light' ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
         <Button color="inherit">Download Resume</Button>
       </Toolbar>
