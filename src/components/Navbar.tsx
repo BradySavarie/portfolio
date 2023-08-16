@@ -7,11 +7,8 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { Stack } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import { useColorMode } from '../context/ColorModeContext';
 
 export default function Navbar() {
-  const { colorMode, toggleColorMode } = useColorMode();
-
   return (
     <AppBar position="static">
       <Toolbar>
@@ -32,8 +29,9 @@ export default function Navbar() {
             <Button color="inherit">Contacts</Button>
           </NavLink>
         </Stack>
-        <IconButton size="large" edge="start" onClick={toggleColorMode}>
-          {colorMode === 'light' ? <LightModeIcon /> : <DarkModeIcon />}
+        <IconButton size="large" edge="start" /* onClick={toggleColorMode} */>
+          <LightModeIcon />
+          <DarkModeIcon />
         </IconButton>
         <Button color="inherit">Download Resume</Button>
       </Toolbar>
