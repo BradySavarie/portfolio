@@ -31,6 +31,9 @@ const getDesignTokens = (mode: PaletteMode) => ({
           },
         }),
   },
+  typography: {
+    fontFamily: "'Inter', 'sans-serif'",
+  },
 });
 
 export default getDesignTokens;
