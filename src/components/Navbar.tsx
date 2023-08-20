@@ -10,31 +10,65 @@ import { NavLink } from 'react-router-dom';
 import { useThemeContext } from '../theme/ThemeContextProvider';
 
 export default function Navbar() {
-  const { mode, toggleColorMode } = useThemeContext();
+  const { theme, mode, toggleColorMode } = useThemeContext();
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+    <AppBar
+      position="static"
+      sx={{ bgcolor: theme.palette.secondary.main, boxShadow: 'none' }}
+    >
+      <Toolbar sx={{ maxWidth: '1280px' }}>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{
+            flexGrow: 1,
+            color: theme.palette.text.primary,
+            fontWeight: 600,
+          }}
+        >
           {'<BRADY__SAVARIE />'}
         </Typography>
-        <Stack direction="row" spacing={2}>
-          <NavLink to="/">
-            <Button color="inherit">Projects</Button>
-          </NavLink>
-          <NavLink to="/">
-            <Button color="inherit">About</Button>
-          </NavLink>
-          <NavLink to="/">
-            <Button color="inherit">Skills</Button>
-          </NavLink>
-          <NavLink to="/">
-            <Button color="inherit">Contacts</Button>
-          </NavLink>
+        <Stack direction="row" spacing={3}>
+          <Stack direction="row" spacing={2}>
+            <NavLink to="/">
+              <Button sx={{ color: theme.palette.text.secondary }}>
+                Projects
+              </Button>
+            </NavLink>
+            <NavLink to="/">
+              <Button sx={{ color: theme.palette.text.secondary }}>
+                About
+              </Button>
+            </NavLink>
+            <NavLink to="/">
+              <Button sx={{ color: theme.palette.text.secondary }}>
+                Skills
+              </Button>
+            </NavLink>
+            <NavLink to="/">
+              <Button sx={{ color: theme.palette.text.secondary }}>
+                Contacts
+              </Button>
+            </NavLink>
+          </Stack>
+          <Stack direction="row" spacing={2} sx={{ height: theme.spacing(4) }}>
+            <IconButton size="large" edge="start" onClick={toggleColorMode}>
+              {mode === 'light' ? <LightModeIcon /> : <DarkModeIcon />}
+            </IconButton>
+            <Button
+              sx={{
+                bgcolor: theme.palette.text.primary,
+                color: theme.palette.secondary.main,
+                borderRadius: theme.shape.borderRadius,
+                px: theme.spacing(2),
+                py: theme.spacing(1),
+                lineHeight: 1,
+              }}
+            >
+              Download Resume
+            </Button>
+          </Stack>
         </Stack>
-        <IconButton size="large" edge="start" onClick={toggleColorMode}>
-          {mode === 'light' ? <LightModeIcon /> : <DarkModeIcon />}
-        </IconButton>
-        <Button color="inherit">Download Resume</Button>
       </Toolbar>
     </AppBar>
   );
