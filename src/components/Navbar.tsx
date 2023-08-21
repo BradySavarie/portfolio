@@ -1,22 +1,32 @@
 import {
   Stack,
   Container,
-  Box,
   AppBar,
   Toolbar,
   Typography,
   Button,
   IconButton,
+  Drawer,
+  useMediaQuery,
 } from '@mui/material';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 import { useThemeContext } from '../theme/ThemeContextProvider';
 
 export default function Navbar() {
   const { theme, mode, toggleColorMode } = useThemeContext();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const isSmallScreen = useMediaQuery(theme.breakpoints.up('md'));
+
+  const toggleDrawer = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <>
       <AppBar
         position="static"
         sx={{
@@ -33,12 +43,22 @@ export default function Navbar() {
                 color: theme.palette.text.primary,
                 fontWeight: 600,
                 flexGrow: 1,
+                whiteSpace: 'nowrap',
               }}
             >
               {'<BRADY__SAVARIE />'}
             </Typography>
-            <Stack direction="row" spacing={3} sx={{ marginLeft: 'auto' }}>
-              <Stack direction="row" spacing={2}>
+            <Stack
+              direction="row"
+              spacing={3}
+              display={{ xs: 'none', sm: 'flex' }}
+              sx={{ marginLeft: 'auto' }}
+            >
+              <Stack
+                direction="row"
+                spacing={2}
+                display={{ xs: 'none', md: 'flex' }}
+              >
                 <NavLink to="/">
                   <Button sx={{ color: theme.palette.text.secondary }}>
                     Projects
@@ -79,15 +99,33 @@ export default function Navbar() {
                     borderRadius: theme.shape.borderRadius,
                     px: theme.spacing(2),
                     py: theme.spacing(1),
+                    whiteSpace: 'nowrap',
                   }}
                 >
                   Download Resume
                 </Button>
               </Stack>
             </Stack>
+            {isSmallScreen ? null : (
+              <IconButton size="large" onClick={toggleDrawer}>
+                <MenuIcon
+                  sx={{
+                    color: theme.palette.text.primary,
+                    marginLeft: theme.spacing(1),
+                  }}
+                />
+              </IconButton>
+            )}
           </Toolbar>
         </Container>
       </AppBar>
-    </Box>
+      <Drawer anchor="right" open={isOpen} onClose={toggleDrawer}>
+        <Container
+          sx={{
+            minWidth: '80vw',
+          }}
+        />
+      </Drawer>
+    </>
   );
 }
