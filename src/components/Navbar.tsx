@@ -131,17 +131,18 @@ export default function Navbar() {
         anchor="right"
         open={isOpen}
         onClose={toggleDrawer}
-        sx={{ bgcolor: theme.palette.secondary.main }}
+        sx={{
+          bgcolor: theme.palette.secondary.main,
+        }}
       >
-        <Container
-          sx={{
-            minWidth: '80vw',
-          }}
-        >
+        <Container>
           <Stack
             direction="row"
             spacing={2}
-            sx={{ paddingY: theme.spacing(1) }}
+            sx={{
+              paddingY: theme.spacing(1),
+              width: `min(80vw, ${theme.breakpoints.values.sm}px)`,
+            }}
           >
             <Typography
               variant="h6"
