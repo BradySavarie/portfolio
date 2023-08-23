@@ -17,6 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useThemeContext } from '../theme/ThemeContextProvider';
+import DownloadResumeButton from './styles/DownloadResumeButton.styled';
 
 export default function Navbar() {
   const { theme, mode, toggleColorMode } = useThemeContext();
@@ -96,18 +97,7 @@ export default function Navbar() {
                     <DarkModeIcon sx={{ color: theme.palette.text.primary }} />
                   )}
                 </IconButton>
-                <Button
-                  sx={{
-                    bgcolor: theme.palette.text.primary,
-                    color: theme.palette.secondary.main,
-                    borderRadius: theme.shape.borderRadius,
-                    px: theme.spacing(2),
-                    py: theme.spacing(1),
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  Download Resume
-                </Button>
+                <DownloadResumeButton>Download Resume</DownloadResumeButton>
               </Stack>
             </Stack>
             {isSmallScreen ? null : (
@@ -251,18 +241,7 @@ export default function Navbar() {
               justifyContent: 'center',
             }}
           >
-            <Button
-              sx={{
-                bgcolor: theme.palette.text.primary,
-                color: theme.palette.secondary.main,
-                borderRadius: theme.shape.borderRadius,
-                px: theme.spacing(2),
-                py: theme.spacing(1),
-                whiteSpace: 'nowrap',
-              }}
-            >
-              Download Resume
-            </Button>
+            <DownloadResumeButton>Download Resume</DownloadResumeButton>
           </Container>
         </Container>
       </Drawer>

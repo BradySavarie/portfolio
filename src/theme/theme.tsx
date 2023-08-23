@@ -3,7 +3,7 @@ import { deepOrange, grey } from '@mui/material/colors';
 
 const getDesignTokens = (mode: PaletteMode) => ({
   shape: {
-    borderRadius: 3.5,
+    borderRadius: '12.25px',
   },
   palette: {
     mode,
