@@ -121,8 +121,10 @@ export default function Navbar() {
         anchor="right"
         open={isOpen}
         onClose={toggleDrawer}
-        sx={{
-          bgcolor: theme.palette.secondary.main,
+        PaperProps={{
+          sx: {
+            bgcolor: theme.palette.secondary.main,
+          },
         }}
       >
         <Container>
