@@ -36,6 +36,7 @@ export default function Navbar() {
           bgcolor: theme.palette.secondary.main,
           boxShadow: 'none',
         }}
+        style={{ backgroundImage: 'none' }}
       >
         <Container maxWidth="lg">
           <Toolbar>
