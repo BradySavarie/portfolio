@@ -128,7 +128,7 @@ export default function Navbar() {
           },
         }}
       >
-        <Container>
+        <Container style={{ backgroundImage: 'none' }}>
           <Stack
             direction="row"
             spacing={2}

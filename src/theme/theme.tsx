@@ -28,6 +28,16 @@ const getDesignTokens = (mode: PaletteMode) => ({
   },
   typography: {
     fontFamily: "'Inter', 'sans-serif'",
+    h1: {
+      fontSize: '60px',
+      fontWeight: 'bold',
+      lineHeight: '72px',
+    },
+    body1: {
+      fontSize: '16px',
+      fontWeight: 'regular',
+      lineHeight: '24px',
+    },
   },
 });
 
