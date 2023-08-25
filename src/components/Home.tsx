@@ -4,7 +4,6 @@ import { useThemeContext } from '../theme/ThemeContextProvider';
 
 export default function Home() {
   const { theme } = useThemeContext();
-  console.log(theme.typography.body1);
 
   return (
     <Box
