@@ -1,7 +1,16 @@
-import { Box, Grid, Stack, Typography, Container } from '@mui/material';
+import {
+  Box,
+  Grid,
+  Stack,
+  Typography,
+  Container,
+  IconButton,
+} from '@mui/material';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import { useThemeContext } from '../theme/ThemeContextProvider';
 import StatusIndicator from './StatusIndicator';
+import linkedInLogo from '../assets/linkedInIcon.svg';
+import githubLogo from '../assets/githubIcon.svg';
 
 export default function Home() {
   const { theme } = useThemeContext();
@@ -30,6 +39,7 @@ export default function Home() {
             paddingX: theme.spacing(4),
           }}
         >
+          {/* Column 1 */}
           <Stack direction="column" spacing={6}>
             <Stack direction="column" spacing={1}>
               <Typography variant="h1" sx={{ whiteSpace: 'nowrap' }}>
@@ -44,8 +54,8 @@ export default function Home() {
                 and keeps me up at night. I love to code!
               </Typography>
             </Stack>
+
             <Grid container>
-              {/* Row 1 */}
               <Grid container item sx={{ marginBottom: theme.spacing(1) }}>
                 <Grid
                   item
@@ -64,8 +74,7 @@ export default function Home() {
                 </Grid>
               </Grid>
 
-              {/* Row 2 */}
-              <Grid container item>
+              <Grid container item sx={{ marginBottom: theme.spacing(4) }}>
                 <Grid
                   item
                   sx={{
@@ -81,8 +90,22 @@ export default function Home() {
                   <Typography>Available for hire</Typography>
                 </Grid>
               </Grid>
+
+              <Grid container item spacing={1}>
+                <Grid item sx={{ marginLeft: '-6px' }}>
+                  <IconButton sx={{ margin: 0 }}>
+                    <img src={githubLogo} alt="githubLogo" />
+                  </IconButton>
+                </Grid>
+                <Grid item>
+                  <IconButton sx={{ margin: 0 }}>
+                    <img src={linkedInLogo} alt="LinkedInLogo" />
+                  </IconButton>
+                </Grid>
+              </Grid>
             </Grid>
           </Stack>
+          {/* Column 2 */}
           <Container sx={{ outline: '1px solid black' }}>
             <Typography>Hey</Typography>
           </Container>
