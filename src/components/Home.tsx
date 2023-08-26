@@ -11,6 +11,7 @@ import { useThemeContext } from '../theme/ThemeContextProvider';
 import StatusIndicator from './StatusIndicator';
 import linkedInLogo from '../assets/linkedInIcon.svg';
 import githubLogo from '../assets/githubIcon.svg';
+import heroImage__light from '../assets/heroImage__light.png';
 
 export default function Home() {
   const { theme } = useThemeContext();
@@ -106,8 +107,8 @@ export default function Home() {
             </Grid>
           </Stack>
           {/* Column 2 */}
-          <Container sx={{ outline: '1px solid black' }}>
-            <Typography>Hey</Typography>
+          <Container disableGutters sx={{ outline: '1px solid black' }}>
+            <img src={heroImage__light} alt="Headshot" height="367.19px" />
           </Container>
         </Stack>
       </Box>
