@@ -12,6 +12,7 @@ import StatusIndicator from './StatusIndicator';
 import linkedInLogo from '../assets/linkedInIcon.svg';
 import githubLogo from '../assets/githubIcon.svg';
 import heroImage__light from '../assets/heroImage__light.png';
+import heroImage__dark from '../assets/heroImage__dark.png';
 
 export default function Home() {
   const { theme } = useThemeContext();
@@ -28,7 +29,6 @@ export default function Home() {
     >
       <Box
         sx={{
-          outline: '1px solid black',
           flex: 1,
         }}
       >
@@ -107,8 +107,12 @@ export default function Home() {
             </Grid>
           </Stack>
           {/* Column 2 */}
-          <Container disableGutters sx={{ outline: '1px solid black' }}>
-            <img src={heroImage__light} alt="Headshot" height="367.19px" />
+          <Container disableGutters>
+            {theme.palette.mode === 'light' ? (
+              <img src={heroImage__light} alt="Headshot" height="367.19px" />
+            ) : (
+              <img src={heroImage__dark} alt="Headshot" height="367.19px" />
+            )}
           </Container>
         </Stack>
       </Box>
