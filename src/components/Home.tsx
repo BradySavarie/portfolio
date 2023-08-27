@@ -5,6 +5,7 @@ import {
   Typography,
   Container,
   IconButton,
+  useMediaQuery,
 } from '@mui/material';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import { useThemeContext } from '../theme/ThemeContextProvider';
@@ -16,14 +17,15 @@ import heroImage__dark from '../assets/heroImage__dark.png';
 
 export default function Home() {
   const { theme } = useThemeContext();
+  const isMediumBreakpoint = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Box
       sx={{
-        height: '560px',
+        height: isMediumBreakpoint ? null : '560px',
         bgcolor: theme.palette.secondary.main,
-        paddingY: theme.spacing(12),
-        paddingX: theme.spacing(11),
+        paddingY: isMediumBreakpoint ? theme.spacing(6) : theme.spacing(12),
+        paddingX: isMediumBreakpoint ? null : theme.spacing(11),
         display: 'flex',
       }}
     >
@@ -33,15 +35,19 @@ export default function Home() {
         }}
       >
         <Stack
-          direction="row"
+          direction={isMediumBreakpoint ? 'column-reverse' : 'row'}
           spacing={theme.spacing(4)}
           sx={{
-            height: '100%',
-            paddingX: theme.spacing(4),
+            height: isMediumBreakpoint ? null : '100%',
+            paddingX: isMediumBreakpoint ? null : theme.spacing(4),
           }}
         >
           {/* Column 1 */}
-          <Stack direction="column" spacing={6}>
+          <Stack
+            direction="column"
+            spacing={6}
+            sx={{ paddingX: isMediumBreakpoint ? theme.spacing(6) : null }}
+          >
             <Stack direction="column" spacing={1}>
               <Typography variant="h1" sx={{ whiteSpace: 'nowrap' }}>
                 Hi, I&apos;m Brady 👋
@@ -107,7 +113,13 @@ export default function Home() {
             </Grid>
           </Stack>
           {/* Column 2 */}
-          <Container disableGutters>
+          <Container
+            disableGutters
+            sx={{
+              display: isMediumBreakpoint ? 'flex' : null,
+              justifyContent: isMediumBreakpoint ? 'center' : null,
+            }}
+          >
             {theme.palette.mode === 'light' ? (
               <img src={heroImage__light} alt="Headshot" height="367.19px" />
             ) : (

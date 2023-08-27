@@ -37,10 +37,18 @@ const getDesignTokens = (mode: PaletteMode) => ({
   },
   typography: {
     fontFamily: "'Inter', 'sans-serif'",
+
     h1: {
-      fontSize: '60px',
-      fontWeight: 'bold',
-      lineHeight: '72px',
+      '@media (min-width:600px)': {
+        fontSize: '60px',
+        fontWeight: 'bold',
+        lineHeight: '72px',
+      },
+      '@media (max-width: 600px)': {
+        fontSize: '30px',
+        fontWeight: 'bold',
+        lineHeight: '36px',
+      },
     },
     body1: {
       fontSize: '16px',
