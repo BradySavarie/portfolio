@@ -10,8 +10,10 @@ import {
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import { useThemeContext } from '../theme/ThemeContextProvider';
 import StatusIndicator from './StatusIndicator';
-import linkedInLogo from '../assets/linkedInIcon.svg';
-import githubLogo from '../assets/githubIcon.svg';
+import linkedInIcon__light from '../assets/linkedInIcon__light.svg';
+import linkedInIcon__dark from '../assets/linkedInIcon__dark.svg';
+import githubIcon__light from '../assets/githubIcon__light.svg';
+import githubIcon__dark from '../assets/githubIcon__dark.svg';
 import heroImage__light from '../assets/heroImage__light.png';
 import heroImage__dark from '../assets/heroImage__dark.png';
 
@@ -101,12 +103,26 @@ export default function Home() {
               <Grid container item spacing={1}>
                 <Grid item sx={{ marginLeft: '-6px' }}>
                   <IconButton sx={{ margin: 0 }}>
-                    <img src={githubLogo} alt="githubLogo" />
+                    <img
+                      src={
+                        theme.palette.mode === 'light'
+                          ? githubIcon__light
+                          : githubIcon__dark
+                      }
+                      alt="githubLogo"
+                    />
                   </IconButton>
                 </Grid>
                 <Grid item>
                   <IconButton sx={{ margin: 0 }}>
-                    <img src={linkedInLogo} alt="LinkedInLogo" />
+                    <img
+                      src={
+                        theme.palette.mode === 'light'
+                          ? linkedInIcon__light
+                          : linkedInIcon__dark
+                      }
+                      alt="linkedIn Logo"
+                    />
                   </IconButton>
                 </Grid>
               </Grid>
@@ -120,11 +136,15 @@ export default function Home() {
               justifyContent: isMediumBreakpoint ? 'center' : null,
             }}
           >
-            {theme.palette.mode === 'light' ? (
-              <img src={heroImage__light} alt="Headshot" height="367.19px" />
-            ) : (
-              <img src={heroImage__dark} alt="Headshot" height="367.19px" />
-            )}
+            <img
+              src={
+                theme.palette.mode === 'light'
+                  ? heroImage__light
+                  : heroImage__dark
+              }
+              alt="Headshot"
+              height="367.19px"
+            />
           </Container>
         </Stack>
       </Box>
