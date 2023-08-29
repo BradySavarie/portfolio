@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <Box
       sx={{
-        height: isMediumBreakpoint ? null : '560px',
+        height: isMediumBreakpoint ? null : '100vh',
         bgcolor: 'secondary.main',
         paddingY: isMediumBreakpoint ? 6 : 12,
         paddingX: isMediumBreakpoint ? null : 11,

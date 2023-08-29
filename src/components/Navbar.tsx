@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <>
       <AppBar
-        position="static"
+        position="sticky"
         sx={{
           bgcolor: theme.palette.secondary.main,
           boxShadow: 'none',

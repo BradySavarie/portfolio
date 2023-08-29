@@ -65,6 +65,11 @@ const getDesignTokens = (mode: PaletteMode) => ({
       fontWeight: 400,
       lineHeight: '28px',
     },
+    subtitle2: {
+      fontSize: '20px',
+      fontWeight: 600,
+      lineHeight: '28px',
+    },
   },
 });
 
