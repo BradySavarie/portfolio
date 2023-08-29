@@ -41,19 +41,29 @@ const getDesignTokens = (mode: PaletteMode) => ({
     h1: {
       '@media (min-width:600px)': {
         fontSize: '60px',
-        fontWeight: 'bold',
+        fontWeight: 700,
         lineHeight: '72px',
       },
       '@media (max-width: 600px)': {
         fontSize: '30px',
-        fontWeight: 'bold',
+        fontWeight: 700,
         lineHeight: '36px',
       },
     },
     body1: {
       fontSize: '16px',
-      fontWeight: 'regular',
+      fontWeight: 400,
       lineHeight: '24px',
+    },
+    body2: {
+      fontSize: '14px',
+      fontWeight: 500,
+      lineHeight: '20px',
+    },
+    subtitle1: {
+      fontSize: '20px',
+      fontWeight: 400,
+      lineHeight: '28px',
     },
   },
 });

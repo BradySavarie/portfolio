@@ -26,9 +26,9 @@ export default function Home() {
     <Box
       sx={{
         height: isMediumBreakpoint ? null : '560px',
-        bgcolor: theme.palette.secondary.main,
-        paddingY: isMediumBreakpoint ? theme.spacing(6) : theme.spacing(12),
-        paddingX: isMediumBreakpoint ? null : theme.spacing(11),
+        bgcolor: 'secondary.main',
+        paddingY: isMediumBreakpoint ? 6 : 12,
+        paddingX: isMediumBreakpoint ? null : 11,
         display: 'flex',
       }}
     >
