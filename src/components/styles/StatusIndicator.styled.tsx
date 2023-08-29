@@ -43,8 +43,8 @@ const StatusSpan = styled.span`
   }
 `;
 
-function StyledStatusIndicator() {
+function StatusIndicator() {
   return <StatusSpan className="status" />;
 }
 
-export default StyledStatusIndicator;
+export default StatusIndicator;

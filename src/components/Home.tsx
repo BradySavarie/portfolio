@@ -6,10 +6,11 @@ import {
   Container,
   IconButton,
   useMediaQuery,
+  Link,
 } from '@mui/material';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import { useThemeContext } from '../theme/ThemeContextProvider';
-import StatusIndicator from './StatusIndicator';
+import StatusIndicator from './styles/StatusIndicator.styled';
 import linkedInIcon__light from '../assets/linkedInIcon__light.svg';
 import linkedInIcon__dark from '../assets/linkedInIcon__dark.svg';
 import githubIcon__light from '../assets/githubIcon__light.svg';
@@ -102,16 +103,22 @@ export default function Home() {
 
               <Grid container item spacing={1}>
                 <Grid item sx={{ marginLeft: '-6px' }}>
-                  <IconButton sx={{ margin: 0 }}>
-                    <img
-                      src={
-                        theme.palette.mode === 'light'
-                          ? githubIcon__light
-                          : githubIcon__dark
-                      }
-                      alt="githubLogo"
-                    />
-                  </IconButton>
+                  <Link
+                    href="https://github.com/BradySavarie"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <IconButton sx={{ margin: 0 }}>
+                      <img
+                        src={
+                          theme.palette.mode === 'light'
+                            ? githubIcon__light
+                            : githubIcon__dark
+                        }
+                        alt="githubLogo"
+                      />
+                    </IconButton>
+                  </Link>
                 </Grid>
                 <Grid item>
                   <IconButton sx={{ margin: 0 }}>
