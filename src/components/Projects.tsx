@@ -1,8 +1,17 @@
-import { Box, Container, Stack, Typography, Grid } from '@mui/material';
+import {
+  Box,
+  Container,
+  Stack,
+  Typography,
+  Grid,
+  IconButton,
+} from '@mui/material';
 import SectionHeading from './styles/SectionHeading.styled';
 import audioEffectsMockup from '../assets/audio-effects-mockup.png';
 import { useThemeContext } from '../theme/ThemeContextProvider';
 import TechnologyTagList from './styles/TechnologyTagList.styled';
+import liveLinkIcon from '../assets/liveLinkIcon.png';
+import githubIcon__primary from '../assets/githubIcon__primary.png';
 
 export default function Projects() {
   const { theme } = useThemeContext();
@@ -71,7 +80,7 @@ export default function Projects() {
               borderRadius: theme.shape.borderRadius,
             }}
           >
-            <Stack direction="column" spacing={3}>
+            <Stack direction="column" spacing={2}>
               <Typography
                 variant="subtitle2"
                 sx={{ color: theme.palette.text.primary }}
@@ -99,6 +108,23 @@ export default function Projects() {
                     'Git',
                   ]}
                 />
+              </Grid>
+
+              <Grid container item>
+                <Grid item sx={{ marginLeft: '-6px' }}>
+                  <IconButton sx={{ margin: 0 }}>
+                    <img src={liveLinkIcon} alt="Live Link" height="40px" />
+                  </IconButton>
+                </Grid>
+                <Grid item>
+                  <IconButton sx={{ margin: 0 }}>
+                    <img
+                      src={githubIcon__primary}
+                      alt="Github Project Link"
+                      height="40px"
+                    />
+                  </IconButton>
+                </Grid>
               </Grid>
             </Stack>
           </Container>
