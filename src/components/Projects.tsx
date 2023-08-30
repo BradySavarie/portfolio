@@ -73,8 +73,16 @@ export default function Projects() {
             }}
           >
             <Stack direction="column" spacing={3}>
-              <Typography variant="subtitle2">Audio Effects</Typography>
-              <Typography variant="body1">
+              <Typography
+                variant="subtitle2"
+                sx={{ color: theme.palette.text.primary }}
+              >
+                Audio Effects
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ color: theme.palette.text.secondary }}
+              >
                 Audio Effects is an e-commerce application offering a
                 hand-selected catalog of guitar effects pedals. You can browse
                 the catalog by category and filter the results by brand, or you

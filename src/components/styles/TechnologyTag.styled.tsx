@@ -10,8 +10,18 @@ const StyledTechnologyTag = styled(Box)`
     ${({ theme }) => theme.spacing(2)};
   width: min-content;
   border-radius: ${({ theme }) => theme.shape.borderRadius};
-  border: 1px solid ${({ theme }) => theme.palette.grey[900]};
-  background-color: ${({ theme }) => theme.palette.common.white};
+  border: 1px solid
+    ${({ theme }) =>
+      theme.palette.mode === 'light'
+        ? theme.palette.text.primary
+        : theme.palette.common.white};
+  background-color: ${({ theme }) =>
+    theme.palette.mode === 'light'
+      ? theme.palette.common.white
+      : 'rgba(255, 255, 255, 0.25)'};
+
+& > :first-child {
+    color: ${({ theme }) => theme.palette.text.secondary}
 `;
 
 function TechnologyTag(props: TechnologyTagProps) {

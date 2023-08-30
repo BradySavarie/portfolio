@@ -24,21 +24,14 @@ const getDesignTokens = (mode: PaletteMode) => ({
             primary: '#111827',
             secondary: '#4B5563',
           },
-          grey: {
-            900: '#111827',
-          },
         }
       : {
           // palette values for dark mode
           primary: { main: '#FB472A' },
           secondary: { main: '#121212' },
           text: {
-            primary: '#F8F7F4',
-            secondary: '#FFFFFF',
-          },
-          grey: {
-            50: '#F9FAFB',
-            900: '#111827',
+            primary: '#FFFFFF',
+            secondary: '#F8F7F4',
           },
         }),
   },
