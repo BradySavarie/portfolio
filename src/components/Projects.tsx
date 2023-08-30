@@ -1,8 +1,12 @@
 import { Box, Container, Stack, Typography } from '@mui/material';
+
 import SectionHeading from './styles/SectionHeading.styled';
 import audioEffectsMockup from '../assets/audio-effects-mockup.png';
+import { useThemeContext } from '../theme/ThemeContextProvider';
+import TechnologyTag from './styles/TechnologyTag.styled';
 
 export default function Projects() {
+  const { theme } = useThemeContext();
   return (
     <Box
       sx={{
@@ -28,7 +32,14 @@ export default function Projects() {
           </Typography>
         </Stack>
 
-        <Stack direction="row" sx={{ width: '100%' }}>
+        <Stack
+          direction="row"
+          sx={{
+            width: '100%',
+            alignItems: 'center',
+            outline: '1px solid black',
+          }}
+        >
           <Container
             disableGutters
             sx={{
@@ -47,7 +58,10 @@ export default function Projects() {
             disableGutters
             sx={{
               width: '50%',
+              height: 'min-content',
               padding: 6,
+              bgcolor: theme.palette.grey[50],
+              borderRadius: theme.shape.borderRadius,
             }}
           >
             <Stack direction="column" spacing={3}>
@@ -58,6 +72,7 @@ export default function Projects() {
                 the catalog by category and filter the results by brand, or you
                 can use the search bar to quickly find a pedal by name.
               </Typography>
+              <TechnologyTag techName="Test" />
             </Stack>
           </Container>
         </Stack>
