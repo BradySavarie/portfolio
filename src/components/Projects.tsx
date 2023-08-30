@@ -13,6 +13,10 @@ export default function Projects() {
         height: '1671px',
         paddingX: 10,
         paddingY: 12,
+        bgcolor:
+          theme.palette.mode === 'light'
+            ? theme.palette.common.white
+            : 'rgba(255,255,255,.025)',
       }}
     >
       <Stack
@@ -54,13 +58,17 @@ export default function Projects() {
               width="100%"
             />
           </Container>
+
           <Container
             disableGutters
             sx={{
               width: '50%',
               height: 'min-content',
               padding: 6,
-              bgcolor: theme.palette.grey[50],
+              bgcolor:
+                theme.palette.mode === 'light'
+                  ? theme.palette.primary.light
+                  : 'rgba(255, 255, 255, .05)',
               borderRadius: theme.shape.borderRadius,
             }}
           >

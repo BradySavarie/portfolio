@@ -6,11 +6,12 @@ type TechnologyTagProps = {
 };
 
 const StyledTechnologyTag = styled(Box)`
-  outline: 1px solid black;
   padding: ${({ theme }) => theme.spacing(0.5)}
     ${({ theme }) => theme.spacing(2)};
   width: min-content;
   border-radius: ${({ theme }) => theme.shape.borderRadius};
+  border: 1px solid ${({ theme }) => theme.palette.grey[900]};
+  background-color: ${({ theme }) => theme.palette.common.white};
 `;
 
 function TechnologyTag(props: TechnologyTagProps) {
