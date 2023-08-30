@@ -1,9 +1,8 @@
-import { Box, Container, Stack, Typography } from '@mui/material';
-
+import { Box, Container, Stack, Typography, Grid } from '@mui/material';
 import SectionHeading from './styles/SectionHeading.styled';
 import audioEffectsMockup from '../assets/audio-effects-mockup.png';
 import { useThemeContext } from '../theme/ThemeContextProvider';
-import TechnologyTag from './styles/TechnologyTag.styled';
+import TechnologyTagList from './styles/TechnologyTagList.styled';
 
 export default function Projects() {
   const { theme } = useThemeContext();
@@ -88,7 +87,19 @@ export default function Projects() {
                 the catalog by category and filter the results by brand, or you
                 can use the search bar to quickly find a pedal by name.
               </Typography>
-              <TechnologyTag techName="Test" />
+              <Grid container>
+                <TechnologyTagList
+                  techNames={[
+                    'React',
+                    'Typescript',
+                    'Material-UI',
+                    'Styled-Components',
+                    'Vite',
+                    'Netlify',
+                    'Git',
+                  ]}
+                />
+              </Grid>
             </Stack>
           </Container>
         </Stack>
