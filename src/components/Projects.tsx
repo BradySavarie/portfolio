@@ -1,8 +1,10 @@
 import { Box, Stack, Typography } from '@mui/material';
-import SectionHeading from './styles/SectionHeading.styled';
-import audioEffectsMockup from '../assets/audio-effects-mockup.png';
 import { useThemeContext } from '../theme/ThemeContextProvider';
+import SectionHeading from './styles/SectionHeading.styled';
 import ProjectCard from './ProjectCard';
+import audioEffectsMockup from '../assets/audio-effects-mockup.png';
+import cvBuilderMockup from '../assets/cv-builder-mockup.png';
+import portfolioMockup from '../assets/portfolio-mockup.png';
 
 export default function Projects() {
   const { theme } = useThemeContext();
@@ -56,12 +58,24 @@ export default function Projects() {
           liveLink="/"
         />
         <ProjectCard
-          imageSrc={audioEffectsMockup}
-          title="Audio Effects"
-          description="Audio Effects is an e-commerce application offering a
-                hand-selected catalog of guitar effects pedals. You can browse
-                the catalog by category and filter the results by brand, or you
-                can use the search bar to quickly find a pedal by name."
+          imageSrc={cvBuilderMockup}
+          title="CV Builder"
+          description="An ATS-compatible CV builder app that exports professional resumes in PDF format. The resume attached to this website was created using CV Builder!"
+          techNames={[
+            'React',
+            'Javascript',
+            'Create-React-App',
+            'Styled-Components',
+            'Github Pages',
+            'Git',
+          ]}
+          githubLink="/"
+          liveLink="/"
+        />
+        <ProjectCard
+          imageSrc={portfolioMockup}
+          title="My Portfolio"
+          description="You're looking at it! This website was developed to display my work and help connect with employers, clients, and other developers. It is fully-responsive and features a dark mode option that can be toggled from within the navbar."
           techNames={[
             'React',
             'Typescript',
