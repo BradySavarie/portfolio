@@ -5,6 +5,7 @@ import {
   Typography,
   Grid,
   IconButton,
+  useMediaQuery,
 } from '@mui/material';
 import SectionHeading from './styles/SectionHeading.styled';
 import audioEffectsMockup from '../assets/audio-effects-mockup.png';
@@ -15,6 +16,9 @@ import githubIcon__primary from '../assets/githubIcon__primary.png';
 
 export default function Projects() {
   const { theme } = useThemeContext();
+  const isMediumBreakpoint = useMediaQuery(theme.breakpoints.down('md'));
+  const isLargeBreakpoint = useMediaQuery(theme.breakpoints.down('lg'));
+
   return (
     <Box
       sx={{
@@ -45,39 +49,41 @@ export default function Projects() {
         </Stack>
 
         <Stack
-          direction="row"
+          direction={isLargeBreakpoint ? 'column' : 'row'}
           sx={{
             width: '100%',
             alignItems: 'center',
-            outline: '1px solid black',
           }}
         >
           <Container
             disableGutters
             sx={{
-              width: '50%',
               paddingX: 2,
               paddingY: 6,
+              display: 'flex',
+              justifyContent: 'center',
             }}
           >
             <img
               src={audioEffectsMockup}
               alt="Audio Effects Mockup"
-              width="100%"
+              width={isMediumBreakpoint ? '100%' : '500px'}
             />
           </Container>
 
           <Container
             disableGutters
             sx={{
-              width: '50%',
+              maxWidth: isLargeBreakpoint ? '100%' : '50%',
               height: 'min-content',
-              padding: 6,
+              paddingX: 6,
+              paddingY: 4,
               bgcolor:
                 theme.palette.mode === 'light'
                   ? theme.palette.primary.light
                   : 'rgba(255, 255, 255, .05)',
               borderRadius: theme.shape.borderRadius,
+              boxShadow: theme.shadows[3],
             }}
           >
             <Stack direction="column" spacing={2}>
