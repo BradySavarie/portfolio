@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography, useMediaQuery } from '@mui/material';
 import { useThemeContext } from '../theme/ThemeContextProvider';
 import SectionHeading from './styles/SectionHeading.styled';
 import ProjectCard from './ProjectCard';
@@ -8,12 +8,12 @@ import portfolioMockup from '../assets/portfolio-mockup.png';
 
 export default function Projects() {
   const { theme } = useThemeContext();
+  const isSmallBreakpoint = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Box
       sx={{
-        height: '1671px',
-        paddingX: 10,
+        paddingX: isSmallBreakpoint ? theme.spacing(4) : 10,
         paddingY: 12,
         bgcolor:
           theme.palette.mode === 'light'
@@ -33,7 +33,7 @@ export default function Projects() {
           <SectionHeading>
             <Typography variant="body2">Projects</Typography>
           </SectionHeading>
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle1" sx={{ textAlign: 'center' }}>
             Some of the recent applications i&apos;ve built:
           </Typography>
         </Stack>

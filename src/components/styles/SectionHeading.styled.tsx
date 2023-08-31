@@ -6,7 +6,6 @@ const SectionHeading = styled(Box)`
   color: ${({ theme }) => theme.palette.secondary.main};
   border-radius: ${({ theme }) => theme.shape.borderRadius};
   width: min-content;
-  outline: 1px solid black;
   padding: ${({ theme }) => theme.spacing(0.5)}
     ${({ theme }) => theme.spacing(2)};
 `;
