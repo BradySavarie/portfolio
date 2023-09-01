@@ -68,7 +68,7 @@ export default function ProjectCard({
               ? theme.palette.primary.light
               : 'rgba(255, 255, 255, .05)',
           borderRadius: theme.shape.borderRadius,
-          boxShadow: theme.shadows[3],
+          boxShadow: theme.shadows[1],
         }}
       >
         <Stack direction="column" spacing={2}>

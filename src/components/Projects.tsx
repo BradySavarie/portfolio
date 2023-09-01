@@ -54,8 +54,8 @@ export default function Projects() {
             'Netlify',
             'Git',
           ]}
-          githubLink="/"
-          liveLink="/"
+          githubLink="https://github.com/BradySavarie/ecommerce-shop"
+          liveLink="https://beamish-bienenstitch-2cbea9.netlify.app/"
         />
         <ProjectCard
           imageSrc={cvBuilderMockup}
@@ -69,8 +69,8 @@ export default function Projects() {
             'Github Pages',
             'Git',
           ]}
-          githubLink="/"
-          liveLink="/"
+          githubLink="https://github.com/BradySavarie/cv-builder"
+          liveLink="https://bradysavarie.github.io/cv-builder/"
         />
         <ProjectCard
           imageSrc={portfolioMockup}
@@ -85,7 +85,7 @@ export default function Projects() {
             'Netlify',
             'Git',
           ]}
-          githubLink="/"
+          githubLink="https://github.com/BradySavarie/portfolio"
           liveLink="/"
         />
       </Stack>
