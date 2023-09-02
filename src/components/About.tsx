@@ -7,8 +7,6 @@ import {
 } from '@mui/material';
 import SectionHeading from './styles/SectionHeading.styled';
 import { useThemeContext } from '../theme/ThemeContextProvider';
-import heroImage__light from '../assets/heroImage__light.png';
-import heroImage__dark from '../assets/heroImage__dark.png';
 import aboutPhoto__light from '../assets/aboutPhoto__light.png';
 import aboutPhoto__dark from '../assets/aboutPhoto__dark.png';
 
@@ -24,9 +22,13 @@ export default function About() {
         paddingX: 10,
         display: 'flex',
         flexDirection: 'column',
+        bgcolor:
+          theme.palette.mode === 'light'
+            ? theme.palette.common.white
+            : 'rgba(255,255,255,.025)',
       }}
     >
-      <Box sx={{ flex: 1, outline: '1px solid black' }}>
+      <Box sx={{ flex: 1 }}>
         <Stack direction="column" spacing={6} sx={{ alignItems: 'center' }}>
           <SectionHeading>
             <Typography variant="body2">About</Typography>
@@ -37,7 +39,6 @@ export default function About() {
               sx={{
                 display: 'flex',
                 justifyContent: isMediumBreakpoint ? 'center' : 'left',
-                outline: '1px solid black',
                 marginBottom: isMediumBreakpoint ? 'null' : theme.spacing(6),
                 marginRight: isMediumBreakpoint ? 'null' : theme.spacing(14),
               }}
