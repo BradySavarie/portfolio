@@ -27,8 +27,8 @@ export default function Technologies() {
       sx={{
         width: '100vw',
         bgcolor: 'secondary.main',
-        paddingX: theme.spacing(10),
-        paddingTop: theme.spacing(4),
+        paddingX: 10,
+        paddingTop: 12,
         paddingBottom: theme.spacing(12),
         display: 'flex',
         flexDirection: 'column',
