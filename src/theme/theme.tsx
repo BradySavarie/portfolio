@@ -50,6 +50,18 @@ const getDesignTokens = (mode: PaletteMode) => ({
         lineHeight: '36px',
       },
     },
+    h2: {
+      '@media (min-width:600px)': {
+        fontSize: '30px',
+        fontWeight: 600,
+        lineHeight: '36px',
+      },
+      '@media (max-width: 600px)': {
+        fontSize: '24px',
+        fontWeight: 600,
+        lineHeight: '32px',
+      },
+    },
     body1: {
       fontSize: '16px',
       fontWeight: 400,
