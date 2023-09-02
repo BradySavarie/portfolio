@@ -23,64 +23,66 @@ export default function Technologies() {
   const isMediumBreakpoint = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <Box
-      sx={{
-        width: '100vw',
-        bgcolor: 'secondary.main',
-        paddingX: 10,
-        paddingTop: 12,
-        paddingBottom: theme.spacing(12),
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+    <section id="technologies">
       <Box
         sx={{
-          flex: 1,
-          paddingX: isMediumBreakpoint ? null : theme.spacing(4),
+          width: '100vw',
+          bgcolor: 'secondary.main',
+          paddingX: 10,
+          paddingTop: 12,
+          paddingBottom: theme.spacing(12),
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        <Stack direction="column" spacing={8} sx={{ height: '100%' }}>
-          <Stack direction="column" spacing={2} sx={{ alignItems: 'center' }}>
-            <SectionHeading>
-              <Typography variant="body2">Technologies</Typography>
-            </SectionHeading>
-            <Typography
-              variant="subtitle1"
-              sx={{ textAlign: 'center', color: 'text.secondary' }}
-            >
-              Some of the skills, tools, and technologies I use often:
-            </Typography>
+        <Box
+          sx={{
+            flex: 1,
+            paddingX: isMediumBreakpoint ? null : theme.spacing(4),
+          }}
+        >
+          <Stack direction="column" spacing={8} sx={{ height: '100%' }}>
+            <Stack direction="column" spacing={2} sx={{ alignItems: 'center' }}>
+              <SectionHeading>
+                <Typography variant="body2">Technologies</Typography>
+              </SectionHeading>
+              <Typography
+                variant="subtitle1"
+                sx={{ textAlign: 'center', color: 'text.secondary' }}
+              >
+                Some of the skills, tools, and technologies I use often:
+              </Typography>
+            </Stack>
+            <Box sx={{ flex: 1 }}>
+              <Grid
+                container
+                direction="row"
+                rowSpacing={isSmallBreakpoint ? 8 : 6}
+                columnSpacing={isSmallBreakpoint ? 4 : 8}
+                justifyContent="center"
+              >
+                <TechnologyCard src={html5Icon} techName="HTML5" />
+                <TechnologyCard src={css3Icon} techName="CSS3" />
+                <TechnologyCard src={javascriptIcon} techName="Javascript" />
+                <TechnologyCard src={typescriptIcon} techName="Typescript" />
+                <TechnologyCard src={reactIcon} techName="React" />
+                <TechnologyCard src={nodejsIcon} techName="Nodejs" />
+                <TechnologyCard src={viteIcon} techName="Vite" />
+                <TechnologyCard src={sassIcon} techName="SASS" />
+                <TechnologyCard src={muiIcon} techName="Material-UI" />
+                <TechnologyCard
+                  src={styledComponentsIcon}
+                  techName="Styled-Components"
+                />
+                <TechnologyCard src={tailwindIcon} techName="Tailwind" />
+                <TechnologyCard src={figmaIcon} techName="Figma" />
+                <TechnologyCard src={jestIcon} techName="Jest" />
+                <TechnologyCard src={gitIcon} techName="Git" />
+              </Grid>
+            </Box>
           </Stack>
-          <Box sx={{ flex: 1 }}>
-            <Grid
-              container
-              direction="row"
-              rowSpacing={isSmallBreakpoint ? 8 : 6}
-              columnSpacing={isSmallBreakpoint ? 4 : 8}
-              justifyContent="center"
-            >
-              <TechnologyCard src={html5Icon} techName="HTML5" />
-              <TechnologyCard src={css3Icon} techName="CSS3" />
-              <TechnologyCard src={javascriptIcon} techName="Javascript" />
-              <TechnologyCard src={typescriptIcon} techName="Typescript" />
-              <TechnologyCard src={reactIcon} techName="React" />
-              <TechnologyCard src={nodejsIcon} techName="Nodejs" />
-              <TechnologyCard src={viteIcon} techName="Vite" />
-              <TechnologyCard src={sassIcon} techName="SASS" />
-              <TechnologyCard src={muiIcon} techName="Material-UI" />
-              <TechnologyCard
-                src={styledComponentsIcon}
-                techName="Styled-Components"
-              />
-              <TechnologyCard src={tailwindIcon} techName="Tailwind" />
-              <TechnologyCard src={figmaIcon} techName="Figma" />
-              <TechnologyCard src={jestIcon} techName="Jest" />
-              <TechnologyCard src={gitIcon} techName="Git" />
-            </Grid>
-          </Box>
-        </Stack>
+        </Box>
       </Box>
-    </Box>
+    </section>
   );
 }

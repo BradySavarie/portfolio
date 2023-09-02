@@ -44,14 +44,22 @@ export default function Navbar() {
               variant="h6"
               component="div"
               sx={{
-                color: theme.palette.text.primary,
                 fontWeight: 600,
                 flexGrow: 1,
                 whiteSpace: 'nowrap',
               }}
             >
-              {'<BRADY__SAVARIE />'}
+              <a
+                href="#home"
+                style={{
+                  textDecoration: 'none',
+                  color: theme.palette.text.primary,
+                }}
+              >
+                {'<BRADY__SAVARIE />'}
+              </a>
             </Typography>
+
             <Stack
               direction="row"
               spacing={3}
@@ -63,26 +71,26 @@ export default function Navbar() {
                 spacing={2}
                 display={{ xs: 'none', md: 'flex' }}
               >
-                <NavLink to="/">
+                <a href="#projects">
                   <Button sx={{ color: theme.palette.text.secondary }}>
                     Projects
                   </Button>
-                </NavLink>
-                <NavLink to="/">
+                </a>
+                <a href="#technologies">
+                  <Button sx={{ color: theme.palette.text.secondary }}>
+                    Technologies
+                  </Button>
+                </a>
+                <a href="#projects">
                   <Button sx={{ color: theme.palette.text.secondary }}>
                     About
                   </Button>
-                </NavLink>
-                <NavLink to="/">
+                </a>
+                <a href="#projects">
                   <Button sx={{ color: theme.palette.text.secondary }}>
-                    Skills
+                    Contact
                   </Button>
-                </NavLink>
-                <NavLink to="/">
-                  <Button sx={{ color: theme.palette.text.secondary }}>
-                    Contacts
-                  </Button>
-                </NavLink>
+                </a>
               </Stack>
               <Stack
                 direction="row"
