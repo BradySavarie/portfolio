@@ -15,7 +15,7 @@ export default function Projects() {
       <Box
         sx={{
           paddingX: isSmallBreakpoint ? theme.spacing(4) : 10,
-          paddingTop: 12,
+          paddingTop: 10,
           paddingBottom: 8,
           bgcolor:
             theme.palette.mode === 'light'
