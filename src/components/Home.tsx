@@ -8,6 +8,7 @@ import {
   useMediaQuery,
   Link,
 } from '@mui/material';
+import { motion } from 'framer-motion';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import { useThemeContext } from '../theme/ThemeContextProvider';
 import StatusIndicator from './styles/StatusIndicator.styled';
@@ -52,7 +53,13 @@ export default function Home() {
               spacing={6}
               sx={{ paddingX: isMediumBreakpoint ? theme.spacing(6) : null }}
             >
-              <Stack direction="column" spacing={1}>
+              <Stack
+                direction="column"
+                spacing={1}
+                component={motion.div}
+                animate={{ x: 0 }}
+                initial={{ x: -100 }}
+              >
                 <Typography variant="h1" sx={{ whiteSpace: 'nowrap' }}>
                   Hi, I&apos;m Brady 👋
                 </Typography>
@@ -143,6 +150,9 @@ export default function Home() {
                 display: isMediumBreakpoint ? 'flex' : null,
                 justifyContent: isMediumBreakpoint ? 'center' : null,
               }}
+              component={motion.div}
+              animate={{ rotate: 0, x: 0 }}
+              initial={{ rotate: 45, x: 100 }}
             >
               <img
                 src={

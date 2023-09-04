@@ -11,12 +11,16 @@ export default function Footer() {
         width: '100vw',
         paddingY: 3,
         paddingX: 10,
+        bgcolor:
+          theme.palette.mode === 'light'
+            ? theme.palette.common.white
+            : 'rgba(255,255,255,.025)',
       }}
     >
       <Stack
         direction="row"
         spacing={2}
-        sx={{ display: 'flex', justifyContent: 'center' }}
+        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
       >
         <img
           src={
@@ -26,7 +30,11 @@ export default function Footer() {
           }
           alt="Copyright Icon"
         />
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ whiteSpace: 'nowrap' }}
+        >
           2023 | Coded with ❤️️ by Brady Savarie
         </Typography>
       </Stack>
