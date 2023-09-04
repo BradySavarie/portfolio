@@ -6,6 +6,8 @@ import {
   IconButton,
   useMediaQuery,
 } from '@mui/material';
+import { useState } from 'react';
+import DoneIcon from '@mui/icons-material/Done';
 import SectionHeading from './styles/SectionHeading.styled';
 import linkedInIcon__light from '../assets/linkedInIcon__light.svg';
 import linkedInIcon__dark from '../assets/linkedInIcon__dark.svg';
@@ -20,6 +22,7 @@ import phoneIcon__dark from '../assets/phoneIcon__dark.svg';
 import copyIcon__dark from '../assets/copyIcon__dark.svg';
 
 export default function Contact() {
+  const [isCopied, setIsCopied] = useState(false);
   const { theme } = useThemeContext();
   const isMediumBreakpoint = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -27,18 +30,14 @@ export default function Contact() {
     const email = 'brady.savarie@hotmail.com';
     const phoneNumber = '705 207 4408';
 
-    if (input === 'email') {
-      try {
-        await navigator.clipboard.writeText(email);
-      } catch (error) {
-        alert(error);
-      }
-    } else if (input === 'phoneNumber') {
-      try {
-        await navigator.clipboard.writeText(phoneNumber);
-      } catch (error) {
-        alert(error);
-      }
+    try {
+      await navigator.clipboard.writeText(
+        input === 'email' ? email : phoneNumber
+      );
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 1500);
+    } catch (error) {
+      setIsCopied(false);
     }
   }
 
@@ -146,6 +145,12 @@ export default function Contact() {
                   />
                 </IconButton>
               </Stack>
+              {isCopied && (
+                <Stack direction="row" spacing={2}>
+                  <Typography variant="body2">Copied Successfully</Typography>
+                  <DoneIcon />
+                </Stack>
+              )}
             </Stack>
 
             <Stack direction="column" spacing={1} sx={{ alignItems: 'center' }}>
