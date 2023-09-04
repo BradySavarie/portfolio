@@ -23,133 +23,171 @@ export default function Contact() {
   const { theme } = useThemeContext();
   const isMediumBreakpoint = useMediaQuery(theme.breakpoints.down('md'));
 
+  async function copyToClipboard(input: string) {
+    const email = 'brady.savarie@hotmail.com';
+    const phoneNumber = '705 207 4408';
+
+    if (input === 'email') {
+      try {
+        await navigator.clipboard.writeText(email);
+      } catch (error) {
+        alert(error);
+      }
+    } else if (input === 'phoneNumber') {
+      try {
+        await navigator.clipboard.writeText(phoneNumber);
+      } catch (error) {
+        alert(error);
+      }
+    }
+  }
+
   return (
-    <Box
-      sx={{
-        width: '100vw',
-        bgcolor: 'secondary.main',
-        paddingY: 12,
-        paddingX: 10,
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+    <section id="contact">
       <Box
         sx={{
-          flex: 1,
-          paddingX: isMediumBreakpoint ? 0 : 4,
+          width: '100vw',
+          bgcolor: 'secondary.main',
+          paddingY: 12,
+          paddingX: 10,
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        <Stack direction="column" spacing={6}>
-          <Stack direction="column" spacing={2} sx={{ alignItems: 'center' }}>
-            <SectionHeading>
-              <Typography variant="body2">Contact</Typography>
-            </SectionHeading>
-            <Typography
-              variant="subtitle1"
-              sx={{ textAlign: 'center', maxWidth: 'sm' }}
-            >
-              What&apos;s next? Don&apos;t hesitate to get in touch if
-              you&apos;re seeking a developer, have questions, or just want to
-              connect.
-            </Typography>
-          </Stack>
-
-          <Stack direction="column" spacing={2} sx={{ alignItems: 'center' }}>
-            <Stack
-              direction="row"
-              spacing={3}
-              sx={{ justifyContent: 'center' }}
-            >
-              <img
-                src={
-                  theme.palette.mode === 'light'
-                    ? mailIcon__light
-                    : mailIcon__dark
-                }
-                alt="Mail Icon"
-                height="32px"
-              />
-              <Typography variant={isMediumBreakpoint ? 'subtitle1' : 'h2'}>
-                brady.savarie@hotmail.com
-              </Typography>
-              <img
-                src={
-                  theme.palette.mode === 'light'
-                    ? copyIcon__light
-                    : copyIcon__dark
-                }
-                alt="Copy Icon"
-                height="44px"
-              />
-            </Stack>
-            <Stack
-              direction="row"
-              spacing={3}
-              sx={{ justifyContent: 'center' }}
-            >
-              <img
-                src={
-                  theme.palette.mode === 'light'
-                    ? phoneIcon__light
-                    : phoneIcon__dark
-                }
-                alt="Phone Icon"
-                height="32px"
-              />
+        <Box
+          sx={{
+            flex: 1,
+            paddingX: isMediumBreakpoint ? 0 : 4,
+          }}
+        >
+          <Stack direction="column" spacing={6}>
+            <Stack direction="column" spacing={2} sx={{ alignItems: 'center' }}>
+              <SectionHeading>
+                <Typography variant="body2">Contact</Typography>
+              </SectionHeading>
               <Typography
-                variant={isMediumBreakpoint ? 'subtitle1' : 'h2'}
+                variant="subtitle1"
+                sx={{
+                  textAlign: 'center',
+                  maxWidth: isMediumBreakpoint ? null : 'sm',
+                }}
+              >
+                What&apos;s next? Don&apos;t hesitate to get in touch if
+                you&apos;re seeking a developer, have questions, or just want to
+                connect.
+              </Typography>
+            </Stack>
+
+            <Stack direction="column" spacing={2} sx={{ alignItems: 'center' }}>
+              <Stack
+                direction="row"
+                spacing={3}
+                sx={{ justifyContent: 'center' }}
+              >
+                <img
+                  src={
+                    theme.palette.mode === 'light'
+                      ? mailIcon__light
+                      : mailIcon__dark
+                  }
+                  alt="Mail Icon"
+                  height="32px"
+                />
+                <Typography variant={isMediumBreakpoint ? 'subtitle1' : 'h2'}>
+                  brady.savarie@hotmail.com
+                </Typography>
+                <IconButton
+                  sx={{ padding: 0 }}
+                  onClick={() => copyToClipboard('email')}
+                >
+                  <img
+                    src={
+                      theme.palette.mode === 'light'
+                        ? copyIcon__light
+                        : copyIcon__dark
+                    }
+                    alt="Copy Icon"
+                    height="44px"
+                  />
+                </IconButton>
+              </Stack>
+              <Stack
+                direction="row"
+                spacing={3}
+                sx={{ justifyContent: 'center' }}
+              >
+                <img
+                  src={
+                    theme.palette.mode === 'light'
+                      ? phoneIcon__light
+                      : phoneIcon__dark
+                  }
+                  alt="Phone Icon"
+                  height="32px"
+                />
+                <Typography
+                  variant={isMediumBreakpoint ? 'subtitle1' : 'h2'}
+                  sx={{ whiteSpace: 'nowrap' }}
+                >
+                  1 (705) 207 4408
+                </Typography>
+                <IconButton
+                  sx={{ padding: 0 }}
+                  onClick={() => copyToClipboard('phoneNumber')}
+                >
+                  <img
+                    src={
+                      theme.palette.mode === 'light'
+                        ? copyIcon__light
+                        : copyIcon__dark
+                    }
+                    alt="Copy Icon"
+                    height="44px"
+                  />
+                </IconButton>
+              </Stack>
+            </Stack>
+
+            <Stack direction="column" spacing={1} sx={{ alignItems: 'center' }}>
+              <Typography
+                variant="body2"
+                color="text.secondary"
                 sx={{ whiteSpace: 'nowrap' }}
               >
-                1 (705) 207 4408
+                You can also find me on these platforms!
               </Typography>
-              <img
-                src={
-                  theme.palette.mode === 'light'
-                    ? copyIcon__light
-                    : copyIcon__dark
-                }
-                alt="Copy Icon"
-                height="44px"
-              />
-            </Stack>
-          </Stack>
-
-          <Stack direction="column" spacing={1} sx={{ alignItems: 'center' }}>
-            <Typography variant="body2" color="text.secondary">
-              You can also find me on these platforms!
-            </Typography>
-            <Stack direction="row">
-              <Link
-                href="https://github.com/BradySavarie"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Stack direction="row">
+                <Link
+                  href="https://github.com/BradySavarie"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <IconButton sx={{ margin: 0 }}>
+                    <img
+                      src={
+                        theme.palette.mode === 'light'
+                          ? githubIcon__light
+                          : githubIcon__dark
+                      }
+                      alt="githubLogo"
+                    />
+                  </IconButton>
+                </Link>
                 <IconButton sx={{ margin: 0 }}>
                   <img
                     src={
                       theme.palette.mode === 'light'
-                        ? githubIcon__light
-                        : githubIcon__dark
+                        ? linkedInIcon__light
+                        : linkedInIcon__dark
                     }
-                    alt="githubLogo"
+                    alt="linkedIn Logo"
                   />
                 </IconButton>
-              </Link>
-              <IconButton sx={{ margin: 0 }}>
-                <img
-                  src={
-                    theme.palette.mode === 'light'
-                      ? linkedInIcon__light
-                      : linkedInIcon__dark
-                  }
-                  alt="linkedIn Logo"
-                />
-              </IconButton>
+              </Stack>
             </Stack>
           </Stack>
-        </Stack>
+        </Box>
       </Box>
-    </Box>
+    </section>
   );
 }

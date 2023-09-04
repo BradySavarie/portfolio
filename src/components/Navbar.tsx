@@ -86,7 +86,7 @@ export default function Navbar() {
                     About
                   </Button>
                 </a>
-                <a href="#projects">
+                <a href="#contact">
                   <Button sx={{ color: theme.palette.text.secondary }}>
                     Contact
                   </Button>
