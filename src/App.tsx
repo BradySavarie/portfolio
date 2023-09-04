@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Projects from './components/Projects';
 import Technologies from './components/Technologies';
 import About from './components/About';
+import Contact from './components/Contact';
 
 function App() {
   const { theme } = useThemeContext();
@@ -17,6 +18,7 @@ function App() {
       <Projects />
       <Technologies />
       <About />
+      <Contact />
     </ThemeProvider>
   );
 }
