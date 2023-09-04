@@ -83,6 +83,7 @@ export default function Projects() {
               'Typescript',
               'Material-UI',
               'Styled-Components',
+              'Framer Motion',
               'Vite',
               'Netlify',
               'Git',

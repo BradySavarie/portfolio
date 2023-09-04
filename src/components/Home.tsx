@@ -58,7 +58,7 @@ export default function Home() {
                 spacing={1}
                 component={motion.div}
                 animate={{ x: 0 }}
-                initial={{ x: -100 }}
+                initial={{ x: -200 }}
               >
                 <Typography variant="h1" sx={{ whiteSpace: 'nowrap' }}>
                   Hi, I&apos;m Brady 👋
@@ -152,7 +152,7 @@ export default function Home() {
               }}
               component={motion.div}
               animate={{ rotate: 0, x: 0 }}
-              initial={{ rotate: 45, x: 100 }}
+              initial={{ rotate: 0, x: 200 }}
             >
               <img
                 src={

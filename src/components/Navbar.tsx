@@ -28,6 +28,13 @@ export default function Navbar() {
     setIsOpen((prev) => !prev);
   };
 
+  const scrollToContact = (id: string) => {
+    const sectionHeader = document.getElementById(`${id}`);
+    if (sectionHeader) {
+      sectionHeader.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <AppBar
@@ -47,17 +54,16 @@ export default function Navbar() {
                 fontWeight: 600,
                 flexGrow: 1,
                 whiteSpace: 'nowrap',
+                color: theme.palette.text.primary,
+                '&:hover': {
+                  cursor: 'pointer',
+                },
               }}
+              onClick={() =>
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+              }
             >
-              <a
-                href="#home"
-                style={{
-                  textDecoration: 'none',
-                  color: theme.palette.text.primary,
-                }}
-              >
-                {'<BRADY__SAVARIE />'}
-              </a>
+              {'<BRADY__SAVARIE />'}
             </Typography>
 
             <Stack
@@ -71,26 +77,33 @@ export default function Navbar() {
                 spacing={2}
                 display={{ xs: 'none', md: 'flex' }}
               >
-                <a href="#projects">
-                  <Button sx={{ color: theme.palette.text.secondary }}>
-                    Projects
-                  </Button>
-                </a>
-                <a href="#technologies">
-                  <Button sx={{ color: theme.palette.text.secondary }}>
-                    Technologies
-                  </Button>
-                </a>
-                <a href="#about">
-                  <Button sx={{ color: theme.palette.text.secondary }}>
-                    About
-                  </Button>
-                </a>
-                <a href="#contact">
-                  <Button sx={{ color: theme.palette.text.secondary }}>
-                    Contact
-                  </Button>
-                </a>
+                <Button
+                  onClick={() => scrollToContact('projects')}
+                  sx={{ color: theme.palette.text.secondary }}
+                >
+                  Projects
+                </Button>
+
+                <Button
+                  onClick={() => scrollToContact('technologies')}
+                  sx={{ color: theme.palette.text.secondary }}
+                >
+                  Technologies
+                </Button>
+
+                <Button
+                  onClick={() => scrollToContact('about')}
+                  sx={{ color: theme.palette.text.secondary }}
+                >
+                  About
+                </Button>
+
+                <Button
+                  onClick={() => scrollToContact('contact')}
+                  sx={{ color: theme.palette.text.secondary }}
+                >
+                  Contact
+                </Button>
               </Stack>
               <Stack
                 direction="row"
