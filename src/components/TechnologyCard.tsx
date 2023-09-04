@@ -1,5 +1,6 @@
-import { Grid, Stack, Typography } from '@mui/material';
+import { Grid, Stack, Typography, useMediaQuery } from '@mui/material';
 import { motion } from 'framer-motion';
+import { useThemeContext } from '../theme/ThemeContextProvider';
 
 type TechnologyCardProps = {
   src: string;
@@ -7,6 +8,8 @@ type TechnologyCardProps = {
 };
 
 export default function TechnologyCard({ src, techName }: TechnologyCardProps) {
+  const { theme } = useThemeContext();
+  const isSmallBreakpoint = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <Grid item>
       <Stack
@@ -21,9 +24,13 @@ export default function TechnologyCard({ src, techName }: TechnologyCardProps) {
         }}
       >
         <motion.div
-          initial={{ x: 50, opacity: 0 }}
+          initial={{ x: isSmallBreakpoint ? 0 : 50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 50, delay: 0.25 }}
+          transition={{
+            type: 'spring',
+            stiffness: 50,
+            delay: isSmallBreakpoint ? 0 : 0.25,
+          }}
         >
           <img src={src} alt="Technology Icon" width="70%" />
           <Typography variant="body1" sx={{ color: 'text.secondary' }}>

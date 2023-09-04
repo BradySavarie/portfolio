@@ -42,7 +42,10 @@ export default function Projects() {
           </Stack>
 
           <motion.div
-            initial={{ x: '-25vw', opacity: 0.5 }}
+            initial={{
+              x: isSmallBreakpoint ? 0 : '-25vw',
+              opacity: isSmallBreakpoint ? 0 : 0.5,
+            }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ type: 'spring', stiffness: 15 }}
           >
@@ -67,7 +70,10 @@ export default function Projects() {
             />
           </motion.div>
           <motion.div
-            initial={{ x: '25vw', opacity: 0.5 }}
+            initial={{
+              x: isSmallBreakpoint ? 0 : '-25vw',
+              opacity: isSmallBreakpoint ? 0 : 0.5,
+            }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ type: 'spring', stiffness: 15 }}
           >
@@ -88,7 +94,10 @@ export default function Projects() {
             />
           </motion.div>
           <motion.div
-            initial={{ x: '-25vw', opacity: 0.5 }}
+            initial={{
+              x: isSmallBreakpoint ? 0 : '-25vw',
+              opacity: isSmallBreakpoint ? 0 : 0.5,
+            }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ type: 'spring', stiffness: 15 }}
           >
