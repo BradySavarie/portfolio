@@ -5,6 +5,7 @@ import {
   Container,
   useMediaQuery,
 } from '@mui/material';
+import { motion } from 'framer-motion';
 import SectionHeading from './styles/SectionHeading.styled';
 import { useThemeContext } from '../theme/ThemeContextProvider';
 import aboutPhoto__light from '../assets/aboutPhoto__light.png';
@@ -45,6 +46,10 @@ export default function About() {
                   marginBottom: isMediumBreakpoint ? 'null' : theme.spacing(6),
                   marginRight: isMediumBreakpoint ? 'null' : theme.spacing(14),
                 }}
+                component={motion.div}
+                initial={{ x: '-25vw', rotateZ: -45 }}
+                whileInView={{ x: 0, rotateZ: 0 }}
+                transition={{ type: 'spring', stiffness: 40 }}
               >
                 <img
                   src={

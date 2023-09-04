@@ -58,7 +58,7 @@ export default function Home() {
                   component={motion.div}
                   animate={{ x: 0 }}
                   initial={{ x: '-50vw' }}
-                  transition={{ type: 'spring', stiffness: 40, delay: 0.2 }}
+                  transition={{ type: 'spring', stiffness: 40 }}
                   variant="h1"
                   sx={{ whiteSpace: 'nowrap' }}
                 >

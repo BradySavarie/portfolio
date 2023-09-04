@@ -14,7 +14,6 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
-import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useThemeContext } from '../theme/ThemeContextProvider';
 import DownloadResumeButton from './styles/DownloadResumeButton.styled';
@@ -85,7 +84,9 @@ export default function Navbar() {
                 </Button>
 
                 <Button
-                  onClick={() => scrollToContact('technologies')}
+                  onClick={() => {
+                    scrollToContact('technologies');
+                  }}
                   sx={{ color: theme.palette.text.secondary }}
                 >
                   Technologies
@@ -189,42 +190,57 @@ export default function Navbar() {
               alignItems: 'left',
             }}
           >
-            <NavLink to="/">
-              <Button
-                sx={{
-                  color: theme.palette.text.secondary,
-                }}
-              >
-                Projects
-              </Button>
-            </NavLink>
-            <NavLink to="/">
-              <Button
-                sx={{
-                  color: theme.palette.text.secondary,
-                }}
-              >
-                About
-              </Button>
-            </NavLink>
-            <NavLink to="/">
-              <Button
-                sx={{
-                  color: theme.palette.text.secondary,
-                }}
-              >
-                Skills
-              </Button>
-            </NavLink>
-            <NavLink to="/">
-              <Button
-                sx={{
-                  color: theme.palette.text.secondary,
-                }}
-              >
-                Contacts
-              </Button>
-            </NavLink>
+            <Button
+              onClick={() => {
+                toggleDrawer();
+                scrollToContact('projects');
+              }}
+              sx={{
+                width: 'min-content',
+                color: theme.palette.text.secondary,
+              }}
+            >
+              Projects
+            </Button>
+
+            <Button
+              onClick={() => {
+                toggleDrawer();
+                scrollToContact('about');
+              }}
+              sx={{
+                width: 'min-content',
+                color: theme.palette.text.secondary,
+              }}
+            >
+              About
+            </Button>
+
+            <Button
+              onClick={() => {
+                toggleDrawer();
+                scrollToContact('technologies');
+              }}
+              sx={{
+                width: 'min-content',
+                color: theme.palette.text.secondary,
+              }}
+            >
+              Technologies
+            </Button>
+
+            <Button
+              onClick={() => {
+                toggleDrawer();
+                scrollToContact('contact');
+              }}
+              sx={{
+                width: 'min-content',
+                color: theme.palette.text.secondary,
+              }}
+            >
+              Contact
+            </Button>
           </Stack>
         </Container>
         <Divider role="presentation" variant="fullWidth" />
