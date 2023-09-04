@@ -1,4 +1,5 @@
 import { Box, Stack, Typography, useMediaQuery } from '@mui/material';
+import { motion } from 'framer-motion';
 import { useThemeContext } from '../theme/ThemeContextProvider';
 import SectionHeading from './styles/SectionHeading.styled';
 import ProjectCard from './ProjectCard';
@@ -40,57 +41,75 @@ export default function Projects() {
             </Typography>
           </Stack>
 
-          <ProjectCard
-            imageSrc={audioEffectsMockup}
-            title="Audio Effects"
-            description="Audio Effects is an e-commerce application offering a
+          <motion.div
+            initial={{ x: '-25vw', opacity: 0.5 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ type: 'spring', stiffness: 15 }}
+          >
+            <ProjectCard
+              imageSrc={audioEffectsMockup}
+              title="Audio Effects"
+              description="Audio Effects is an e-commerce application offering a
                 hand-selected catalog of guitar effects pedals. You can browse
                 the catalog by category and filter the results by brand, or you
                 can use the search bar to quickly find a pedal by name."
-            techNames={[
-              'React',
-              'Typescript',
-              'Material-UI',
-              'Styled-Components',
-              'Vite',
-              'Netlify',
-              'Git',
-            ]}
-            githubLink="https://github.com/BradySavarie/ecommerce-shop"
-            liveLink="https://beamish-bienenstitch-2cbea9.netlify.app/"
-          />
-          <ProjectCard
-            imageSrc={cvBuilderMockup}
-            title="CV Builder"
-            description="An ATS-compatible CV builder app that exports professional resumes in PDF format. The resume attached to this website was created using CV Builder!"
-            techNames={[
-              'React',
-              'Javascript',
-              'Create-React-App',
-              'Styled-Components',
-              'Github Pages',
-              'Git',
-            ]}
-            githubLink="https://github.com/BradySavarie/cv-builder"
-            liveLink="https://bradysavarie.github.io/cv-builder/"
-          />
-          <ProjectCard
-            imageSrc={portfolioMockup}
-            title="My Portfolio"
-            description="You're looking at it! This website was developed to display my work and help connect with employers, clients, and other developers. It is fully-responsive and features a dark mode option that can be toggled from within the navbar."
-            techNames={[
-              'React',
-              'Typescript',
-              'Material-UI',
-              'Styled-Components',
-              'Framer Motion',
-              'Vite',
-              'Netlify',
-              'Git',
-            ]}
-            githubLink="https://github.com/BradySavarie/portfolio"
-            liveLink="/"
-          />
+              techNames={[
+                'React',
+                'Typescript',
+                'Material-UI',
+                'Styled-Components',
+                'Vite',
+                'Netlify',
+                'Git',
+              ]}
+              githubLink="https://github.com/BradySavarie/ecommerce-shop"
+              liveLink="https://beamish-bienenstitch-2cbea9.netlify.app/"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ x: '25vw', opacity: 0.5 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ type: 'spring', stiffness: 15 }}
+          >
+            <ProjectCard
+              imageSrc={cvBuilderMockup}
+              title="CV Builder"
+              description="An ATS-compatible CV builder app that exports professional resumes in PDF format. The resume attached to this website was created using CV Builder!"
+              techNames={[
+                'React',
+                'Javascript',
+                'Create-React-App',
+                'Styled-Components',
+                'Github Pages',
+                'Git',
+              ]}
+              githubLink="https://github.com/BradySavarie/cv-builder"
+              liveLink="https://bradysavarie.github.io/cv-builder/"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ x: '-25vw', opacity: 0.5 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ type: 'spring', stiffness: 15 }}
+          >
+            <ProjectCard
+              imageSrc={portfolioMockup}
+              title="My Portfolio"
+              description="You're looking at it! This website was developed to display my work and help connect with employers, clients, and other developers. It is fully-responsive and features a dark mode option that can be toggled from within the navbar."
+              techNames={[
+                'React',
+                'Typescript',
+                'Material-UI',
+                'Styled-Components',
+                'Framer Motion',
+                'Vite',
+                'Netlify',
+                'Git',
+              ]}
+              githubLink="https://github.com/BradySavarie/portfolio"
+              liveLink="/"
+            />
+          </motion.div>
         </Stack>
       </Box>
     </section>

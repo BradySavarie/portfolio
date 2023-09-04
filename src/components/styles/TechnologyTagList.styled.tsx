@@ -10,7 +10,7 @@ const StyledTechnologyTagList = styled(Box)`
   padding: ${({ theme }) => theme.spacing(0.5)}
     ${({ theme }) => theme.spacing(2)};
   width: max-content;
-  border-radius: ${({ theme }) => theme.shape.borderRadius};
+  border-radius: ${({ theme }) => theme.shape.borderRadius}px;
   border: 1px solid
     ${({ theme }) =>
       theme.palette.mode === 'light'

@@ -53,17 +53,24 @@ export default function Home() {
               spacing={6}
               sx={{ paddingX: isMediumBreakpoint ? theme.spacing(6) : null }}
             >
-              <Stack
-                direction="column"
-                spacing={1}
-                component={motion.div}
-                animate={{ x: 0 }}
-                initial={{ x: -200 }}
-              >
-                <Typography variant="h1" sx={{ whiteSpace: 'nowrap' }}>
+              <Stack direction="column" spacing={1}>
+                <Typography
+                  component={motion.div}
+                  animate={{ x: 0 }}
+                  initial={{ x: '-50vw' }}
+                  transition={{ type: 'spring', stiffness: 40, delay: 0.2 }}
+                  variant="h1"
+                  sx={{ whiteSpace: 'nowrap' }}
+                >
                   Hi, I&apos;m Brady 👋
                 </Typography>
-                <Typography variant="body1">
+                <Typography
+                  component={motion.div}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  variant="body1"
+                >
                   I&apos;m a full stack developer with a foundation in the
                   graphics production industry that is focused on building
                   software that is visually-appealing, intuitive, fast, and
@@ -151,8 +158,9 @@ export default function Home() {
                 justifyContent: isMediumBreakpoint ? 'center' : null,
               }}
               component={motion.div}
-              animate={{ rotate: 0, x: 0 }}
-              initial={{ rotate: 0, x: 200 }}
+              animate={{ x: 0, rotateZ: 0 }}
+              initial={{ x: '50vw', rotateZ: 45 }}
+              transition={{ type: 'spring', stiffness: 40 }}
             >
               <img
                 src={

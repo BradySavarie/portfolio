@@ -11,7 +11,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
     },
   },
   shape: {
-    borderRadius: '12.25px',
+    borderRadius: 5,
   },
   palette: {
     mode,
