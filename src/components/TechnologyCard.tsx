@@ -10,6 +10,7 @@ type TechnologyCardProps = {
 export default function TechnologyCard({ src, techName }: TechnologyCardProps) {
   const { theme } = useThemeContext();
   const isSmallBreakpoint = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Grid item>
       <Stack

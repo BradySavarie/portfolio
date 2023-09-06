@@ -71,7 +71,7 @@ export default function Projects() {
           </motion.div>
           <motion.div
             initial={{
-              x: isSmallBreakpoint ? 0 : '-25vw',
+              x: isSmallBreakpoint ? 0 : '25vw',
               opacity: isSmallBreakpoint ? 0 : 0.5,
             }}
             whileInView={{ x: 0, opacity: 1 }}
