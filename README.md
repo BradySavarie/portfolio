@@ -1,28 +1,25 @@
-# React + TypeScript + Vite
+<h1>🤓 My Portfolio</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h2>All Favourite Personal Projects in One Place!</h2>
 
-Currently, two official plugins are available:
+<img width="966" alt="My Portfolio Mockup" src="https://github.com/BradySavarie/portfolio/assets/106128212/bd73b489-fa67-491c-8e01-1f3465c7499f">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<em>This website was developed by yours truly to display my work and help connect with employers, clients, and other developers. It is fully-responsive and features a dark mode option that can be toggled from within the navbar. I used Sagar Shah's portfolio site as a design reference - credits to him for providing an excellent, free Figma file to use as a foundation to build off of. </em>
 
-## Expanding the ESLint configuration
+Live Link: https://main--comfy-licorice-bd7a05.netlify.app/
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<hr>
 
-- Configure the top-level `parserOptions` property like this:
+This application is a part of The Odin Projects Advanced HTML & CSS curriculum and was developed with the purpose of practicing my front-end development skills. The main challenges I faced were learning how to use use Figma to help design and develop a beautiful UI, how to create a dark mode theme that can be toggled using Material-UI's theming system, and how to apply some slick animations via the Framer Motion library.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+<h3>Built With:</h3>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# Portfolio
+<ul>
+  <li>React
+  <li>Typescript
+  <li>MaterialUI
+  <li>Styled Components
+  <li>Framer Motion
+  <li>Vite
+  <li>Netlify
+</ul>
