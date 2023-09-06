@@ -4,7 +4,7 @@
 
 <img width="966" alt="My Portfolio Mockup" src="https://github.com/BradySavarie/portfolio/assets/106128212/bd73b489-fa67-491c-8e01-1f3465c7499f">
 
-<em>This website was developed by yours truly to display my work and help connect with employers, clients, and other developers. It is fully-responsive and features a dark mode option that can be toggled from within the navbar. I used Sagar Shah's portfolio site as a design reference - credits to him for providing an excellent, free Figma file to use as a foundation to build off of. </em>
+<em>This website was developed by yours truly to display my work and help connect with employers, clients, and other developers. It is fully-responsive and features a dark mode option that can be toggled from within the navbar. I used Sagar Shah's portfolio site as a design reference - credits to him for providing an excellent, free Figma file to use as a foundation to build off.</em>
 
 Live Link: https://main--comfy-licorice-bd7a05.netlify.app/
 
