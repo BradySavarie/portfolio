@@ -1,6 +1,6 @@
 <h1>🤓 My Portfolio</h1>
 
-<h2>All Favourite Personal Projects in One Place!</h2>
+<h2>Where All My Best Personal Projects Hang Out!</h2>
 
 <img width="966" alt="My Portfolio Mockup" src="https://github.com/BradySavarie/portfolio/assets/106128212/bd73b489-fa67-491c-8e01-1f3465c7499f">
 
